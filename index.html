@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS2 1v1 Autumn Cup</title>
+  <style>
+    :root {
+      --main-bg: #0b0f17;
+      --accent: #00ffa3;
+      --secondary: #ffb400;
+      --text: #e0e0e0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top, #121826, #000);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding-bottom: 60px;
+    }
+
+    header {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      color: var(--accent);
+      letter-spacing: 1px;
+      font-size: 1.6rem;
+    }
+
+    main {
+      margin-top: 100px;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    #countdown {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: scale(1.05);
+    }
+
+    img {
+      max-width: 250px;
+      border-radius: 10px;
+      margin: 10px auto;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* === МОДАЛКА === */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+      color: #fff;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      background: #0b0f17;
+      color: #fff;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .close:hover {
+      color: #fff;
+    }
+  </style> 
+  <style>
+  .join-btn {
+    display: inline-block;
+    background-color: #00ff66; /* acid green */
+    color: #0d0d0d;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 14px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.25s ease;
+    box-shadow: 0 0 15px #00ff66aa, 0 0 30px #00ff66aa;
+  }
+
+  .join-btn:hover {
+    background-color: #00cc55;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ff66, 0 0 50px #00ff66;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>CS2 Tournament info</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Турниры ФАН сообщества</h2>
+      <div id="countdown">Заходи к нам</div>
+      <a href="https://t.me/CS2_turnir_server" target="_blank" class="join-btn">ВОЙТИ В ТУРНИРНОЕ КОМЬЮНИТИ</a>
+    </section>
+
+    <section>
+      <h2>Расписание</h2>
+      <p>Турниры проходят каждую <strong>субботу</strong>.</p>
+      <p>Начало в промежутке с <strong>18:00 по 21:00 (по МСК)</strong>.</p>
+    </section>
+
+    <section>
+      <h2>Вступительный взнос</h2>
+      <p><strong>начиная от 25 рублей</strong></p>
+      <p>Оплата возможна деньгами или скинами.</p>
+    </section>
+
+    <section>
+      <h2>Призовой фонд одного турнира</h2>
+      <p>Варьируется 250р - <strong>5000р</strong></p>
+      <p>Самый большой турнир на данный момент - Скины:</p>
+        <p><em>АК-47 «Ледяной уголь»;</em></p>
+        <p><em>АК-47 «Элитное снаряжение»;</em></p>
+        <p><em>StatTrak™ М4А4 «Магний»</em></p>
+      <p>Себе стоимость всего: ~600р+</p>
+<img src="https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Ice%20Coaled%20(Field-Tested)?l=russian" alt="AK-47 | «Ледяной уголь»">
+      <p><a href="https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Ice%20Coaled%20(Field-Tested)?l=russian" target="_blank" style="color:var(--accent)">Смотреть на Steam?</a></p>
+      <img src="https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Elite%20Build%20%28Well-Worn%29?l=russian" alt="AK-47 | «Элитное снаряжение»">
+      <p><a href="https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Elite%20Build%20%28Well-Worn%29?l=russian" target="_blank" style="color:var(--accent)">Смотреть на Steam?</a></p>
+      <img src="https://steamcommunity.com/market/listings/730/StatTrak™%20M4A4%20%7C%20Magnesium%20(Well-Worn)" alt="StatTrak™ М4А4 | «Магний»">
+      <p><a href="https://steamcommunity.com/market/listings/730/StatTrak™%20M4A4%20%7C%20Magnesium%20(Well-Worn)" target="_blank" style="color:var(--accent)">Смотреть на Steam?</a></p>
+    </section>
+
+    <section>
+      <a href="https://t.me/Addmin_seek" target="_blank" class="join-btn">ЗАРЕГИСТРИРОВАТЬСЯ СЕЙЧАС</a>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 CS2 Tournament Hub | <a href="https://t.me/CS2_turnir_server" target="_blank" style="color:var(--accent)">Наш Telegram</a>
+  </footer>
+  </script>
+</body>
+</html>
