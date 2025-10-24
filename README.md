@@ -1,1 +1,1 @@
-# cs2-tournament-site
+# CS2-Tournament-community
